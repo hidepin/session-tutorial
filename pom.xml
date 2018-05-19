@@ -175,6 +175,5 @@
     <module>session-tutorial-init-env</module>
     <module>session-tutorial-init-domain</module>
     <module>session-tutorial-init-web</module>
-    <module>session-tutorial-init-initdb</module>
   </modules>
 </project>
