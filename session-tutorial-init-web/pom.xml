@@ -55,12 +55,6 @@
                 <dependency>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>session-tutorial-init-env</artifactId>
-                    <exclusions>
-                        <exclusion>
-                            <groupId>com.h2database</groupId>
-                            <artifactId>h2</artifactId>
-                        </exclusion>
-                    </exclusions>
                 </dependency>
             </dependencies>
         </profile>
