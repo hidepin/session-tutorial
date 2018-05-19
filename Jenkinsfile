@@ -19,7 +19,7 @@ pipeline {
         }
         stage('成果物の保存') {
             steps {
-                archiveArtifacts artifacts: '*/*.war', fingerprint: true, onlyIfSuccessful: true
+                archiveArtifacts artifacts: '**/*.war', fingerprint: true, onlyIfSuccessful: true
             }
         }
 //        stage('JUnitテスト結果の集計') {
