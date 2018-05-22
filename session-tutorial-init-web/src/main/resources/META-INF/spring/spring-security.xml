@@ -68,4 +68,5 @@
     <bean id="userIdMDCPutFilter" class="org.terasoluna.gfw.security.web.logging.UserIdMDCPutFilter">
     </bean>
 
+	<bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" /> 
 </beans>
