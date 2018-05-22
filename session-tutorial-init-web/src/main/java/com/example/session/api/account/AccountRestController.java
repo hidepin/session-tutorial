@@ -24,7 +24,7 @@ public class AccountRestController {
 	public List<AccountResource> getAccount() {
 		List<AccountResource> accountResources = new ArrayList<>();
 		AccountResource accountResource = new AccountResource();
-		accountResource.setUsername(sessionRegistry.toString());
+		accountResource.setUsername(sessionRegistry.getAllPrincipals().toString());
 		accountResources.add(accountResource);
 		return accountResources;
 	}
