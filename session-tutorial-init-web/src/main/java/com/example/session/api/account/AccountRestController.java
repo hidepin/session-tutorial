@@ -23,9 +23,12 @@ public class AccountRestController {
 	@ResponseStatus(HttpStatus.OK)
 	public List<AccountResource> getAccount() {
 		List<AccountResource> accountResources = new ArrayList<>();
-		AccountResource accountResource = new AccountResource();
-		accountResource.setUsername(sessionRegistry.getAllPrincipals().toString());
-		accountResources.add(accountResource);
+
+		for ( Object principal : sessionRegistry.getAllPrincipals() ) {
+			AccountResource accountResource = new AccountResource();
+			accountResource.setUsername(sessionRegistry.getAllSessions(principal, false).toString());
+			accountResources.add(accountResource);
+       	}
 		return accountResources;
 	}
 	
