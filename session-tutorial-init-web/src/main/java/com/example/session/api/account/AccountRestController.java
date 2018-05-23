@@ -26,7 +26,7 @@ public class AccountRestController {
 
 		for ( Object principal : sessionRegistry.getAllPrincipals() ) {
 			AccountResource accountResource = new AccountResource();
-			accountResource.setUsername(sessionRegistry.getAllSessions(principal, true).toString());
+			accountResource.setUsername(principal.toString());
 			accountResources.add(accountResource);
        	}
 		return accountResources;
