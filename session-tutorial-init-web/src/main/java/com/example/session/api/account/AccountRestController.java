@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.session.domain.service.userdetails.AccountDetails;
+
 @RestController
 @RequestMapping("account")
 public class AccountRestController {
@@ -25,9 +27,12 @@ public class AccountRestController {
 		List<AccountResource> accountResources = new ArrayList<>();
 
 		for ( Object principal : sessionRegistry.getAllPrincipals() ) {
-			AccountResource accountResource = new AccountResource();
-			accountResource.setUsername(principal.toString());
-			accountResources.add(accountResource);
+			if (principal instanceof AccountDetails) {
+				AccountResource accountResource = new AccountResource();	
+				AccountDetails accountDetails = (AccountDetails)principal;
+				accountResource.setUsername(accountDetails.getAccount().getEmail());	
+				accountResources.add(accountResource);
+			}
        	}
 		return accountResources;
 	}
