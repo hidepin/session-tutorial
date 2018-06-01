@@ -22,10 +22,15 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
- 
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.security.crypto.codec.Base64;
+import org.springframework.stereotype.Component;
 import org.springframework.util.SerializationUtils;
- 
+
+@Component
+@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class Cart implements Serializable {
 	/**
 	 * 
