@@ -75,7 +75,7 @@
 
 	<bean id="sessionRegistry"
 		class="org.springframework.session.security.SpringSessionBackedSessionRegistry">
-		<constructor-arg ref="sessionRegistry"/>
+		<constructor-arg ref="sessionRepository"/>
 	</bean>
 	<bean id="sessionRepository"
 		class="org.springframework.session.SessionRepository">
