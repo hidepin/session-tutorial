@@ -77,5 +77,8 @@
 		class="org.springframework.session.security.SpringSessionBackedSessionRegistry">
 		<constructor-arg ref="sessionRegistry"/>
 	</bean>
+	<bean id="sessionRepository"
+		class="org.springframework.session.SessionRepository">
+	</bean>
 
 </beans>
