@@ -21,7 +21,8 @@
         <sec:session-management>
 			<sec:concurrency-control
             	max-sessions="-1"
-            	error-if-maximum-exceeded="true"/> <!-- (1) (2) -->
+            	error-if-maximum-exceeded="true"
+            	session-registry-ref="sessionRegistry"/> <!-- (1) (2) -->
 		</sec:session-management>
         <sec:intercept-url pattern="/loginForm" access="permitAll" />
         <sec:intercept-url pattern="/account/create" access="permitAll" />
@@ -71,5 +72,10 @@
     <!-- Put UserID into MDC -->
     <bean id="userIdMDCPutFilter" class="org.terasoluna.gfw.security.web.logging.UserIdMDCPutFilter">
     </bean>
+
+	<bean id="sessionRegistry"
+		class="org.springframework.session.security.SpringSessionBackedSessionRegistry">
+		<constructor-arg ref="sessionRepository"/>
+	</bean>
 
 </beans>
