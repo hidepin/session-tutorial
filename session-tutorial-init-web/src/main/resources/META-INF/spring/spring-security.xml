@@ -78,7 +78,7 @@
 		<constructor-arg ref="sessionRepository"/>
 	</bean>
 	<bean id="sessionRepository"
-		class="org.springframework.session.SessionRepository">
+		class="org.springframework.session.MapSessionRepository">
 	</bean>
 
 </beans>
