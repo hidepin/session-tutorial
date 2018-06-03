@@ -78,7 +78,9 @@
 		<constructor-arg ref="sessionRepository"/>
 	</bean>
 	<bean id="sessionRepository"
-		class="org.springframework.session.MapSessionRepository">
+		class="org.springframework.session.jdbc.JdbcOperationsSessionRepository">
+		<constructor-arg ref="jdbcTemplate"/>
+		<constructor-arg ref="transactionManager"/>
 	</bean>
 
 </beans>
