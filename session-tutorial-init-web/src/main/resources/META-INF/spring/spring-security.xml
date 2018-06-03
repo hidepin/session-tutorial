@@ -20,7 +20,7 @@
         <sec:custom-filter ref="userIdMDCPutFilter" after="ANONYMOUS_FILTER"/>
         <sec:session-management>
 			<sec:concurrency-control
-            	max-sessions="-1"
+            	max-sessions="1"
             	error-if-maximum-exceeded="true"
             	session-registry-ref="sessionRegistry"/> <!-- (1) (2) -->
 		</sec:session-management>
