@@ -79,7 +79,7 @@
 	</bean>
 	<bean id="sessionRepository"
 		class="org.springframework.session.jdbc.JdbcOperationsSessionRepository">
-		<constructor-arg ref="jdbcTemplate"/>
+		<constructor-arg ref="jdbcTemplateForCodeList"/>
 		<constructor-arg ref="transactionManager"/>
 	</bean>
 
