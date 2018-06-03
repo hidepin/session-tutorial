@@ -25,7 +25,7 @@ public class AccountRestController {
 	@ResponseStatus(HttpStatus.OK)
 	public List<AccountResource> getAccount() {
 		List<AccountResource> accountResources = new ArrayList<>();
-
+/*
 		for ( Object principal : sessionRegistry.getAllPrincipals() ) {
 			if (principal instanceof AccountDetails) {
 				AccountResource accountResource = new AccountResource();	
@@ -34,6 +34,7 @@ public class AccountRestController {
 				accountResources.add(accountResource);
 			}
        	}
+*/
 		return accountResources;
 	}
 	
