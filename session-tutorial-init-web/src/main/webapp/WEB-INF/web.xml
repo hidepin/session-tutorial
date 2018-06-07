@@ -21,6 +21,9 @@
     <listener>
         <listener-class>org.terasoluna.gfw.web.logging.HttpSessionEventLoggingListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>org.springframework.serucity.web.session.HttpSessionEventPublisher</listener-class>
+    </listener>
 
     <filter>
         <filter-name>MDCClearFilter</filter-name>
@@ -142,4 +145,14 @@
         <tracking-mode>COOKIE</tracking-mode>
     </session-config>
 
+<filter>
+	<filter-name>springSessionRepositoryFilter</filter-name>
+	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>springSessionRepositoryFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+	<dispatcher>REQUEST</dispatcher>
+	<dispatcher>ERROR</dispatcher>
+</filter-mapping>
 </web-app>
